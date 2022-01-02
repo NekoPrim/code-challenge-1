@@ -22,20 +22,21 @@ technical tasks
     [X] .gitignore
     [X] static files
     [X] PORT
-    [X] html
+    [X] HTML
         [X] source jQuery, client.js, and style.css
     [X] client.js
         [X] source jQuery
-[ ] html
-    [ ] input for tiles
-    [ ] submit button
-    [ ] div to append tiles to DOM
+[ ] HTML
+    [X] input for tiles
+    [X] button
+    [X] div to append tiles to DOM
 [ ] client.js
-    [ ] ajax POST
-        [ ] method
-        [ ] url
-        [ ] data
-        [ ] .catch
+    [X] function for button
+    [X] ajax POST
+        [X] method
+        [X] url
+        [X] data
+        [X] .catch
     [ ] ajax GET
         [ ] method
         [ ] url
@@ -46,3 +47,4 @@ technical tasks
         [ ] res.sendStatus(201)
     [ ] GET
     [ ] store scrabble tiles
+[ ] CSS
