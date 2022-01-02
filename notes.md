@@ -9,7 +9,7 @@ technical tasks
         [X] jQuery
     [X] styles
         [X] style.css
-[ ] setup
+[X] setup
     [X] express
         [X] install
         [X] require
@@ -22,9 +22,9 @@ technical tasks
     [X] .gitignore
     [X] static files
     [X] PORT
-    [ ] html
-        [ ] source jQuery, client.js, and style.css
-    [ ] client.js
-        [ ] source jQuery
+    [X] html
+        [X] source jQuery, client.js, and style.css
+    [X] client.js
+        [X] source jQuery
 [ ] client.js
 [ ] server.js
