@@ -25,6 +25,7 @@ let myScrabbleTiles = [
     { tile: 'A', score: 1 }
 ];
 
+
 // receive client POST
 app.post('/scrabble-tiles', (req, res) => {
     console.log('in POST /scrabble-tiles', req.body);
@@ -39,32 +40,77 @@ app.post('/scrabble-tiles', (req, res) => {
     res.sendStatus(201);
 })
 
-// find score for tile
+// match tile to points
 function tileScore(scrabble) {
     console.log('in tileScore');
 
-    let points;
+    let thisTile;
 
-    if (scrabble.tile === ['A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U']) {
-        points = 1;
+    // switch statement to match tile to score
+    switch(scrabble.tile) {
+        case 'D':
+        case 'G':
+            thisTile = {
+                tile: scrabble.tile,
+                score: 2
+            };
+            break;
+        case 'B':
+        case 'C':
+        case 'M':
+        case 'P':
+            thisTile = {
+                tile: scrabble.tile,
+                score: 3
+            };
+            break;
+        case 'F':
+        case 'H':
+        case 'V':
+        case 'W':
+        case 'Y':
+            thisTile = {
+                tile: scrabble.tile,
+                score: 4
+            };
+            break;
+        case 'K':
+            thisTile = {
+                tile: scrabble.tile,
+                score: 5
+            }
+            break;
+        case 'J':
+        case 'X':
+            thisTile = {
+                tile: scrabble.tile,
+                score: 8
+            }
+            break;
+        case 'Q':
+        case 'Z':
+            thisTile = {
+                tile: scrabble.tile,
+                score: 10
+            }
+            break;
+        default:
+            thisTile = {
+                tile: scrabble.tile,
+                score: 1
+            }
     }
-    else if (scrabble.tile === ['D', 'G']) {
-        points = 2;
-    }
-    else if (scrabble.tile === ['B', 'C', 'M', 'P']) {
-        points = 3;
-    }
-    else if (scrabble.tile === ['F', 'H', 'V', 'W', 'Y']) {
-        points = 4;
-    }
-    else if (scrabble.tile === 'K') {
-        points = 5;
-    }
-    else if (scrabble.tile === ['J', 'X']) {
-        points = 8;
-    }
-    else if (scrabble.tile === ['Q', 'Z']) {
-        points = 10;
-    }
-    return points;
+
+    console.log(thisTile);
+
+    // add tile to array
+    myScrabbleTiles.push(thisTile);
 }
+
+
+// response GET client.js
+app.get('/my-scrabble-tiles', (req, res) => {
+    console.log('in GET /my-scrabble-tiles');
+
+    res.send(myScrabbleTiles);
+})

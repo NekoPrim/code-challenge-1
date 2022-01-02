@@ -26,7 +26,7 @@ technical tasks
         [X] source jQuery, client.js, and style.css
     [X] client.js
         [X] source jQuery
-[ ] HTML
+[X] HTML
     [X] input for tiles
     [X] button
     [X] div to append tiles to DOM
@@ -37,14 +37,14 @@ technical tasks
         [X] url
         [X] data
         [X] .catch
-    [ ] ajax GET
-        [ ] method
-        [ ] url
-        [ ] .catch
+    [X] ajax GET
+        [X] method
+        [X] url
+        [X] .catch
     [ ] append tiles to DOM
-[ ] server.js
-    [ ] POST
-        [ ] res.sendStatus(201)
-    [ ] GET
-    [ ] store scrabble tiles
+[X] server.js
+    [X] POST
+        [X] res.sendStatus(201)
+    [X] GET
+    [X] store scrabble tiles
 [ ] CSS
