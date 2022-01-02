@@ -42,8 +42,8 @@ technical tasks
         [X] url
         [X] .catch
     [X] append tiles to DOM
-    [ ] append high score to DOM
-[X] server.js
+    [X] append high score to DOM
+[ ] server.js
     [X] POST
         [X] res.sendStatus(201)
     [X] GET

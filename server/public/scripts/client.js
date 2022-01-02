@@ -11,6 +11,9 @@ function onReady() {
 
     // list preloaded tiles in array
     getTile();
+
+    // show high score
+    getHighScore();
 }
 
 
@@ -33,6 +36,7 @@ function onClick() {
         .then((response) => {
             console.log('response', response);
             getTile();
+            getHighScore();
         })
         .catch((err) => {
             console.log('POST failed!');
@@ -91,4 +95,40 @@ function afterClick() {
     console.log('in afterClick');
 
     $('#letterInput').val('');
+}
+
+
+// get high score
+function getHighScore() {
+    console.log('in getHighScore');
+
+    let ajaxOptions = {
+        method: 'GET',
+        url: '/high-score'
+    };
+
+    $.ajax(ajaxOptions).then((response) => {
+        console.log('AJAX request complete!', response);
+
+        postHighScore(response);
+    })
+        .catch((err) => {
+            console.log('GET failed!');
+            alert('Unable to get high score. Try again later!');
+        })
+}
+
+
+// append high score to DOM
+function postHighScore(response) {
+    console.log('in postHighScore');
+
+    // clear div
+    $('.score').empty();
+
+    // append
+    $('.score').append(`
+        <strong>
+            High Score: ${response}
+        </strong>`);
 }

@@ -15,6 +15,7 @@ app.listen(PORT, () => {
     console.log('server running on: ', PORT);
 });// listening on local host: 5000 
 
+
 // array to store data
 let myScrabbleTiles = [
     { tile: 'N', score: 1 },
@@ -22,12 +23,12 @@ let myScrabbleTiles = [
     { tile: 'Z', score: 10 },
     { tile: 'X', score: 8 },
     { tile: 'D', score: 2 },
-    { tile: 'A', score: 1 }
+    { tile: 'A', score: 1 },
 ];
 
 
 // high score
-let highScore = 29;
+let highScore = [29];
 
 
 // receive client POST
@@ -43,6 +44,7 @@ app.post('/scrabble-tiles', (req, res) => {
     // confirm success
     res.sendStatus(201);
 })
+
 
 // match tile to points
 function tileScore(scrabble) {
@@ -112,9 +114,48 @@ function tileScore(scrabble) {
 }
 
 
-// response GET client.js
+// response GET client.js for array myScrabbleTiles
 app.get('/my-scrabble-tiles', (req, res) => {
     console.log('in GET /my-scrabble-tiles');
 
     res.send(myScrabbleTiles);
+})
+
+
+function addMyTiles(array) {
+    console.log('in addMyTiles')
+    let scoreSum = 0;
+    for (let x of array) {
+        scoreSum = scoreSum + x.score;
+    }
+    return scoreSum;
+}
+
+
+myScore = addMyTiles(myScrabbleTiles);
+
+console.log(myScore);
+
+
+function beatHighScore(x) {
+    console.log('in beatHighScore');
+    if (x > highScore) {
+        console.log('New high Score!');
+        highScore = [x];
+    }
+    else {
+        console.log('next time!');
+    }
+}//end beatHighScore
+
+beatHighScore(myScore);
+
+console.log(highScore);
+
+
+// response GET client.js for high score
+app.get('/high-score', (req, res) => {
+    console.log('in GET /high-score');
+
+    res.send(highScore);
 })
