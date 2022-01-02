@@ -41,10 +41,12 @@ technical tasks
         [X] method
         [X] url
         [X] .catch
-    [ ] append tiles to DOM
+    [X] append tiles to DOM
+    [ ] append high score to DOM
 [X] server.js
     [X] POST
         [X] res.sendStatus(201)
     [X] GET
     [X] store scrabble tiles
+    [ ] calculate score and check against high score
 [ ] CSS

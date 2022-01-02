@@ -26,6 +26,10 @@ let myScrabbleTiles = [
 ];
 
 
+// high score
+let highScore = 29;
+
+
 // receive client POST
 app.post('/scrabble-tiles', (req, res) => {
     console.log('in POST /scrabble-tiles', req.body);

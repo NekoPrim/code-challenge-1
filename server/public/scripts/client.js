@@ -8,6 +8,9 @@ function onReady() {
 
     // function for button
     $('#letterButton').on('click', onClick);
+
+    // list preloaded tiles in array
+    getTile();
 }
 
 
@@ -62,11 +65,24 @@ function getTile() {
 
 
 // append scrabble tiles to DOM
-function postTile(myTiles) {
-    // clear div
-    $('.listScrabble').empty();
+function postTile(response) {
+    console.log('in postTile');
 
-    // add tile
+    // clear div
+    $('.myTiles').empty();
+
+    // loop through tiles. add to DOM
+    for (let i = 0; i < response.length; i ++) {
+        let mine = response[i];
+        $('.myTiles').append(`
+            <ul>
+                <li><strong>${mine.tile}</strong>
+                </br>
+                <i>score: ${mine.score}</i>
+                </li>
+            </ul>
+        `)
+    }
 }
 
 
