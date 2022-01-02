@@ -10,15 +10,21 @@ technical tasks
     [X] styles
         [X] style.css
 [ ] setup
-    [ ] express
+    [X] express
         [X] install
-        [ ] require
+        [X] require
     [X] nodemon
         [X] install
         [X] modify .json "start"
-    [ ] body-parser
+    [X] body-parser
         [X] install
-        [ ] require
+        [X] require
     [X] .gitignore
-    [ ] static
-    [ ] PORT
+    [X] static files
+    [X] PORT
+    [ ] html
+        [ ] source jQuery, client.js, and style.css
+    [ ] client.js
+        [ ] source jQuery
+[ ] client.js
+[ ] server.js
